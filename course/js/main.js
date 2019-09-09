@@ -1,10 +1,19 @@
-'use strict';
+"use strict";
 
-var name = 'Guilherme';
-var age = 19;
-var text = '\n\tname: ' + name + ' \n\tage: ' + age + '  \n';
+/*function teste(valueA, valueB) {
+	console.log(arguments[0]);
+	console.log(arguments[1]);
+}*/
 
-console.log(text);
+teste(10, 20);
+
+function test(valueA) {
+	var valueB = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 4;
+
+	return valueA + valueB;
+}
+
+console.log(test(4));
 /*var bob = {
 	_name: 'Bob',
 	_friends: [ 'Guilherme', 'Camila', 'Murilo'],
@@ -45,4 +54,13 @@ bob.printFriends();*/
 
 let red = new Color('red', 'RED');
 console.log(red.getColor());*/
+"use strict";
+/*let name = 'Guilherme';
+let age = 19;
+let text = `
+	name: ${name} 
+	age: ${age}  
+`;
+
+console.log(text);*/
 "use strict";
