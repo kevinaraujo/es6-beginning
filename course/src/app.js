@@ -1,12 +1,9 @@
-/*function teste(valueA, valueB) {
-	console.log(arguments[0]);
-	console.log(arguments[1]);
-}*/
+var list = ['test', 34, {name: 'Guilherme'}];
 
-teste(10,20);
-
-function test(valueA, valueB = 4){
-	return valueA + valueB;
+for (var i in list){
+	//console.log(list[i]);
 }
 
-console.log(test(4));
+for(let i of list){
+	console.log(i);
+}
