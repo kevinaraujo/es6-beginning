@@ -1,35 +1,58 @@
 'use strict';
 
-var list = ['test', 34, { name: 'Guilherme' }];
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-for (var i in list) {
-	//console.log(list[i]);
-}
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-try {
-	for (var _iterator = list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-		var _i = _step.value;
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-		console.log(_i);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var People = function () {
+	function People(name, email, phone) {
+		_classCallCheck(this, People);
+
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
 	}
-} catch (err) {
-	_didIteratorError = true;
-	_iteratorError = err;
-} finally {
-	try {
-		if (!_iteratorNormalCompletion && _iterator.return) {
-			_iterator.return();
+
+	_createClass(People, [{
+		key: 'toString',
+		value: function toString() {
+			return '\n\t\t\tName: ' + this.name + '\n\t\t\tEmail: ' + this.email + '\n\t\t\tPhone: ' + this.phone + '\n\t\t';
 		}
-	} finally {
-		if (_didIteratorError) {
-			throw _iteratorError;
-		}
+	}]);
+
+	return People;
+}();
+
+var Client = function (_People) {
+	_inherits(Client, _People);
+
+	function Client(id, name, email, phone) {
+		_classCallCheck(this, Client);
+
+		var _this = _possibleConstructorReturn(this, (Client.__proto__ || Object.getPrototypeOf(Client)).call(this, name, email, phone));
+
+		_this.id = id;
+		return _this;
 	}
-}
+
+	_createClass(Client, [{
+		key: 'toString',
+		value: function toString() {
+			return '\n\t\t\tid: ' + this.id + '\n\t\t\t' + _get(Client.prototype.__proto__ || Object.getPrototypeOf(Client.prototype), 'toString', this).call(this) + '\n\t\t';
+		}
+	}]);
+
+	return Client;
+}(People);
+
+var test = new Client(1, 'Kevin Araújo', 'kfa_34@hotmail.com', '1111-1111');
+console.log(test.toString());
 /*var bob = {
 	_name: 'Bob',
 	_friends: [ 'Guilherme', 'Camila', 'Murilo'],
@@ -92,4 +115,14 @@ function test(valueA, valueB = 4){
 }
 
 console.log(test(4));*/
+"use strict";
+/*var list = ['test', 34, {name: 'Guilherme'}];
+
+for (var i in liast){
+	//console.log(list[i]);
+}
+
+for(let i of list){
+	console.log(i);
+}*/
 "use strict";
