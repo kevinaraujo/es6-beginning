@@ -1,34 +1,11 @@
 'use strict';
 
-var color = new Set();
-color.add('blue').add('green').add('blue');
+var number = 123456.34;
+var En = new Intl.NumberFormat('en-US').format(number);
+var De = new Intl.NumberFormat('de-DE').format(number);
 
-if (color.size === 2 && color.has('blue')) {
-	var _iteratorNormalCompletion = true;
-	var _didIteratorError = false;
-	var _iteratorError = undefined;
-
-	try {
-		for (var _iterator = color.values()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-			var key = _step.value;
-
-			console.log('\n\t\t\tkey: ' + key + '\n\t\t');
-		}
-	} catch (err) {
-		_didIteratorError = true;
-		_iteratorError = err;
-	} finally {
-		try {
-			if (!_iteratorNormalCompletion && _iterator.return) {
-				_iterator.return();
-			}
-		} finally {
-			if (_didIteratorError) {
-				throw _iteratorError;
-			}
-		}
-	}
-}
+console.log(En);
+console.log(De);
 /*var bob = {
 	_name: 'Bob',
 	_friends: [ 'Guilherme', 'Camila', 'Murilo'],
@@ -135,4 +112,15 @@ class Client extends People {
 
 let test = new Client(1, 'Kevin Araújo', 'kfa_34@hotmail.com', '1111-1111');
 console.log(test.toString());*/
+"use strict";
+/*let color = new Set();
+color.add('blue').add('green').add('blue');
+
+if(color.size === 2 && color.has('blue')){
+	for(let key of color.values()) {
+		console.log(`
+			key: ${key}
+		`);
+	}
+}*/
 "use strict";
