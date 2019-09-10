@@ -1,6 +1,5 @@
-var number = 123456.34
-var En = new Intl.NumberFormat('en-US').format(number);
-var De = new Intl.NumberFormat('de-DE').format(number);
+var USD = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'});
+var BRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'});
 
-console.log(En);
-console.log(De);
+console.log(USD.format(1910109291.40));
+console.log(BRL.format(1910109291.40));
