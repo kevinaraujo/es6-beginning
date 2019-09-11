@@ -1,5 +1,5 @@
-var USD = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'});
-var BRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'});
+var US = new Intl.DateTimeFormat('en-US');
+var BR = new Intl.DateTimeFormat('pt-BR');
 
-console.log(USD.format(1910109291.40));
-console.log(BRL.format(1910109291.40));
+console.log(US.format(new Date('2016-01-10')));
+console.log(BR.format(new Date('2016-01-10')));
