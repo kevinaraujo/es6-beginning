@@ -1,10 +1,14 @@
 'use strict';
 
-var US = new Intl.DateTimeFormat('en-US');
-var BR = new Intl.DateTimeFormat('pt-BR');
+var pos = 'hello'.indexOf('ll');
 
-console.log(US.format(new Date('2016-01-10')));
-console.log(BR.format(new Date('2016-01-10')));
+console.log(pos);
+
+var pos = 'hello'.startsWith('hello', 0);
+var pos = 'hello'.endsWith('llo', 3);
+var inc = 'hello'.includes('eall');
+
+console.log(inc);
 /*var bob = {
 	_name: 'Bob',
 	_friends: [ 'Guilherme', 'Camila', 'Murilo'],
@@ -31,6 +35,13 @@ var bob = {
 }
 
 bob.printFriends();*/
+"use strict";
+/*var US = new Intl.DateTimeFormat('en-US');
+var BR = new Intl.DateTimeFormat('pt-BR');
+
+console.log(US.format(new Date('2016-01-10')));
+console.log(BR.format(new Date('2016-01-10')));
+*/
 "use strict";
 /*class Color {
 	constructor(codeColor, nameColor){
